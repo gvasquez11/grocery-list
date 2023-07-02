@@ -12,11 +12,15 @@
 
     <section class="contentContainer">
         <ul class="list">
-            <li class="item">
                 <% for(let i = 0; i < list.length; i++){ %>
-                <span><%= list[i].item %></span>
+                    <li class="item">
+                    <% if(list[i].completed === true) {%>
+                        <span class="itemInCart"> <%= list[i].item %>  </span>
+                    <% }else{ %>
+                        <span class="notInCart"><%= list[i].item %></span>
+                    <% } %>
+                    </li>
                <% } %>
-            </li>
         </ul>
 
         <h3>Add Item: </h3>
@@ -26,5 +30,6 @@
         </form>
     </section>
 
+    <script src='js/main.js'></script>
 </body>
 </html>

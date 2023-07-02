@@ -29,13 +29,35 @@ app.post('/addToList', (request, response) =>{
     db.collection('tolist').insertOne({item: request.body.groceryItem, completed: false})
     .then(result => {
         console.log('Grocery Item added')
-        response.json('Grocery Item Added')
+        response.redirect('/')
     })
     .catch(error => console.log(error))
 
 })
 
+app.put('/markComplete', (request,response) =>{
+    db.collection('tolist').updateOne({item: request.body.itemFromJS},{
+        $set: {
+            completed: true
+          }
+    }).then(result => {
+        console.log('Marked Complete')
+        response.json('Marked Complete')
+    })
+    .catch(error => console.error(error))
+})
 
+app.put('/markUncomplete', (request,response) => {
+    db.collection('tolist').updateOne({item: request.body.itemFromJS},{
+        $set: {
+            completed: false
+        }
+    }).then(result =>{
+        console.log('Marked Uncomplete')
+        response.json('Marked Uncomplete')
+    }).catch(error => console.log(error))
+
+})
 
 app.listen(process.env.PORT || PORT, () =>{
     console.log(`Server is running successfully on port ${PORT}`)
