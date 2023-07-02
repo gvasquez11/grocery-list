@@ -1,0 +1,22 @@
+h1{
+    color:#2E60D2;
+    text-align: center;
+}
+
+.contentContainer{
+    border: 2px solid black;
+    width: 30%;
+    max-height: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+ul{
+    padding: 0;
+}
+
+li{
+    list-style: none;
+    font-size: 20px;
+    
+}

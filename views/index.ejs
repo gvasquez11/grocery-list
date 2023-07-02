@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Gorcery List</title>
+</head>
+
+<body>
+    <h1>Gorcery List</h1>
+
+    <section class="contentContainer">
+        <ul class="list">
+            <li class="item">
+                <% for(let i = 0; i < list.length; i++){ %>
+                <span><%= list[i].item %></span>
+               <% } %>
+            </li>
+        </ul>
+
+        <h3>Add Item: </h3>
+        <form action="/addTolist" method="POST">
+            <input type="text" placeholder="Gorcery Item" name="groceryItem">
+            <input type="submit">
+        </form>
+    </section>
+
+</body>
+</html>
