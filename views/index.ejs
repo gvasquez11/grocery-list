@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d24920b36a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Gorcery List</title>
 </head>
@@ -15,11 +16,13 @@
                 <% for(let i = 0; i < list.length; i++){ %>
                     <li class="item">
                     <% if(list[i].completed === true) {%>
-                        <span class="itemInCart"> <%= list[i].item %>  </span>
+                        <section class="itemInCart"> <%= list[i].item %></section>
                     <% }else{ %>
-                        <span class="notInCart"><%= list[i].item %></span>
+                        <section class="notInCart"><%= list[i].item %></section>
                     <% } %>
+                    <section class="fa-solid fa-trash"></section>
                     </li>
+                    
                <% } %>
         </ul>
 

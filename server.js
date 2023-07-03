@@ -59,6 +59,18 @@ app.put('/markUncomplete', (request,response) => {
 
 })
 
+app.delete('/deleteItem', (request,response) => {
+    db.collection('tolist').deleteOne({item: request.body.itemFromJS},{
+    }).then(result =>{
+        console.log('Deleted Item')
+        response.json('Deleted Item')
+    }).catch(error => console.log(error))
+
+})
+
+
+
+
 app.listen(process.env.PORT || PORT, () =>{
     console.log(`Server is running successfully on port ${PORT}`)
 })
