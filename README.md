@@ -2,6 +2,10 @@
 
 This is a simple web application that allows you to create, read, update, and delete grocery lists. The application is built using Node.js, Express, MongoDB Atlas, and EJS templating engine.
 
+## Video Demo
+
+https://github.com/gvasquez11/grocery-list/assets/36422346/5e40fe24-5fd9-45a9-b0d6-25069e526ff4
+
 ## Features
 
 - Create a new grocery list with a title and optional description.
